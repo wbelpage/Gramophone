@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Gramophone.Web.Models;
 
 namespace Gramophone.Web.Areas.Admin.Controllers
 {
@@ -23,19 +24,21 @@ namespace Gramophone.Web.Areas.Admin.Controllers
         }
 
         //
-        // GET: /Admin/Song/Create
-        public ActionResult Create()
+        // GET: /Admin/Song/Add
+        public ActionResult Add()
         {
             return View();
         }
 
         //
-        // POST: /Admin/Song/Create
+        // POST: /Admin/Song/Add
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Add(FormCollection collection)
         {
             try
             {
+                SongDTO songs=new SongDTO();
+                UpdateModel(songs);
                 // TODO: Add insert logic here
 
                 return RedirectToAction("Index");
