@@ -90,6 +90,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Views\Shared\Images\001.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
