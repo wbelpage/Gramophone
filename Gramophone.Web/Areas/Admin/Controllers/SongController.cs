@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Gramophone.Web.Models;
+using Gramophone.Web.Models.Services;
 
 namespace Gramophone.Web.Areas.Admin.Controllers
 {
@@ -33,14 +34,15 @@ namespace Gramophone.Web.Areas.Admin.Controllers
         //
         // POST: /Admin/Song/Add
         [HttpPost]
-        public ActionResult Add(FormCollection collection)
+        public ActionResult Add(FormCollection frm)
         {
             try
             {
                 SongDTO songs=new SongDTO();
                 UpdateModel(songs);
-                // TODO: Add insert logic here
 
+                SongService ss = new SongService();
+                ss.AddSong(songs);
                 return RedirectToAction("Index");
             }
             catch
