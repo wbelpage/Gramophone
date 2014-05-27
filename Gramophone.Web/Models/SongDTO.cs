@@ -9,13 +9,13 @@ namespace Gramophone.Web.Models
     {
         public int SongID { get; set; }
         public string SongTitle { get; set; }
-        public string Singer1 { get; set; }
-        public string Singer2 { get; set; }
-        public string Singer3 { get; set; }
-        public string Composer { get; set; }
-        public string Director { get; set; }
-        public string Musician { get; set; }
-        public string Album { get; set; }
+        public int Singer1 { get; set; }
+        public int Singer2 { get; set; }
+        public int Singer3 { get; set; }
+        public int Composer { get; set; }
+        public int Director { get; set; }
+        public int Musician { get; set; }
+        public int Album { get; set; }
         public int Year { get; set; }
         public string YouTubeURL { get; set; }
     }
