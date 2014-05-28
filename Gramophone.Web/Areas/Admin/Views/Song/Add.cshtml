@@ -2,50 +2,61 @@
     ViewBag.Title = "Add";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
+ @Page Inherits="System.Web.Mvc.ViewPage<SongDTO>"
 <h2>Add</h2>
-@*<div class="container">
-    <div class="row">
-        <div class="span9">*@
-<form class="form-horizontal" role="form">
+ 
+<form action="/Song/Add" class="form-horizontal" role="form" enctype="multipart/form-data" method="post">
     <div class="header">
         <h2>Add Song</h2>
     </div>
     <div class="form-group">
         <label class="col-sm-2 control-label">Title</label>
         <div class="col-sm-3">
-            <input type="password" class="form-control" id="txtTitle" placeholder="Title">
+            <input type="text" class="form-control" id="SongTitle" placeholder="Title">
         </div>
     </div>
     <div class="form-group">
         <label for="inputPassword" class="col-sm-2 control-label">Year</label>
         <div class="col-sm-3">
-            <input type="password" class="form-control" id="txtYear" placeholder="Year">
+            <input type="text" class="form-control" id="Year" placeholder="Year">
         </div>
     </div>
-</form>
-@*<div class="niceBox normalWidth">
-                <div class="header">
-                    <h2>Details</h2>
-                </div>
-                <div class="content clearIt">
-                    <div class="splitLeft floatLeft width50P">
-                        <div class="subContent padding20 ">
-
-                            <div class="control-group">
-                                <label id="MainContent_Label4" class="control-label" for="lblContactType">Contact Type</label>
-                                <div class="controls">
-                                    <div style="margin-top: 5px;">
-                                        <span class=''>Student</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>*@
-
-@* </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Singer 1</label>
+        @Html.DropDownList("Singer1", new SelectList(ViewBag.Singers, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
     </div>
-</div>*@
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Singer 2</label>
+        @Html.DropDownList("Singer2", new SelectList(ViewBag.Singers, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Singer 3</label>
+        @Html.DropDownList("Singer3", new SelectList(ViewBag.Singers, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Composer</label>
+        @Html.DropDownList("Composer", new SelectList(ViewBag.Singers, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Director</label>
+        @Html.DropDownList("Director", new SelectList(ViewBag.Singers, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Music By</label>
+        @Html.DropDownList("Musician", new SelectList(ViewBag.Singers, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Album</label>
+        @Html.DropDownList("Album", new SelectList(ViewBag.Albums, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">YouTube Link</label>
+                <div class="col-sm-3">
+            <input type="text" class="form-control" id="YouTubeURL" placeholder="Title">
+        </div> 
+    </div>
+<p><button type="submit" id="btnSubmit"  class="btn btn-default">Add</button></p>
+</form> 
+ 
+ 
 

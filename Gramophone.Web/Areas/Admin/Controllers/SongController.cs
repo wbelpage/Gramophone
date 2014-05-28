@@ -28,6 +28,27 @@ namespace Gramophone.Web.Areas.Admin.Controllers
         // GET: /Admin/Song/Add
         public ActionResult Add()
         {
+            SongService ss = new SongService();
+
+            //Get Artists list
+            List<ArtistDTO> artistList = ss.GetArtists();
+            List<SelectListItem> list = new List<SelectListItem>();
+            foreach (var artist in artistList)
+            {
+                SelectListItem item = new SelectListItem { Text = artist.Name, Value = artist.ArtistID.ToString() };
+                list.Add(item);
+            }
+            ViewBag.Singers = list;
+
+            //Get Albums List
+            List<Album> albums = ss.GetAlbums();
+            List<SelectListItem> albumList = new List<SelectListItem>();
+            foreach (var album in albums)
+            {
+                SelectListItem albumItem = new SelectListItem { Text = album.Name, Value = album.AlbumID.ToString() };
+                albumList.Add(albumItem);
+            }
+            ViewBag.Albums = albumList;
             return View();
         }
 
@@ -43,11 +64,12 @@ namespace Gramophone.Web.Areas.Admin.Controllers
 
                 SongService ss = new SongService();
                 ss.AddSong(songs);
+               // return View("~/Views/Admin/Song/Add");
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+               return View("~/Views/Admin/Song/Add");
             }
         }
 
