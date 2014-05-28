@@ -2,7 +2,8 @@
     ViewBag.Title = "Add";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
- @Page Inherits="System.Web.Mvc.ViewPage<SongDTO>"
+@model Gramophone.Web.Models.SongDTO
+
 <h2>Add</h2>
  
 <form action="/Song/Add" class="form-horizontal" role="form" enctype="multipart/form-data" method="post">
@@ -12,13 +13,13 @@
     <div class="form-group">
         <label class="col-sm-2 control-label">Title</label>
         <div class="col-sm-3">
-            <input type="text" class="form-control" id="SongTitle" placeholder="Title">
+            <input type="text" class="form-control" id="SongTitle" name="SongTitle" placeholder="Title">
         </div>
     </div>
     <div class="form-group">
         <label for="inputPassword" class="col-sm-2 control-label">Year</label>
         <div class="col-sm-3">
-            <input type="text" class="form-control" id="Year" placeholder="Year">
+            <input type="text" class="form-control" id="Year" name="Year" placeholder="Year">
         </div>
     </div>
     <div class="form-group">
@@ -47,7 +48,7 @@
     </div>
     <div class="form-group">
         <label for="inputPassword" class="col-sm-2 control-label">Album</label>
-        @Html.DropDownList("Album", new SelectList(ViewBag.Albums, "Value", "Text"), new {@class="btn dropdown-toggle"}) 
+        @*@Html.DropDownList("Album", new SelectList(ViewBag.Albums, "Value", "Text"), new {@class="btn dropdown-toggle"})*@ 
     </div>
     <div class="form-group">
         <label for="inputPassword" class="col-sm-2 control-label">YouTube Link</label>

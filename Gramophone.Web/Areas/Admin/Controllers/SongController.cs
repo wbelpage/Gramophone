@@ -41,14 +41,14 @@ namespace Gramophone.Web.Areas.Admin.Controllers
             ViewBag.Singers = list;
 
             //Get Albums List
-            List<Album> albums = ss.GetAlbums();
-            List<SelectListItem> albumList = new List<SelectListItem>();
-            foreach (var album in albums)
-            {
-                SelectListItem albumItem = new SelectListItem { Text = album.Name, Value = album.AlbumID.ToString() };
-                albumList.Add(albumItem);
-            }
-            ViewBag.Albums = albumList;
+            //List<Album> albums = ss.GetAlbums();
+            //List<SelectListItem> albumList = new List<SelectListItem>();
+            //foreach (var album in albums)
+            //{
+            //    SelectListItem albumItem = new SelectListItem { Text = album.Name, Value = album.AlbumID.ToString() };
+            //    albumList.Add(albumItem);
+            //}
+            //ViewBag.Albums = albumList;
             return View();
         }
 

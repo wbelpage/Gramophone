@@ -28,7 +28,7 @@ namespace Gramophone.Web.Models.Services
         public List<ArtistDTO> GetArtists()
         {
             List<ArtistDTO> artists = new List<ArtistDTO>();
-            using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=D:\\Git\\Gramophone.Web\\App_Data\\GramophoneDB.mdf;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\Users\\wasana\\Documents\\GitHub\\Gramophone\\Gramophone.Web\\App_Data\\GramophoneDB.mdf;Integrated Security=True"))
             {
                 connection.Open();
                 using (SqlCommand cmd = new SqlCommand())
@@ -53,7 +53,7 @@ namespace Gramophone.Web.Models.Services
         public List<Album> GetAlbums()
         {
             List<Album> albums = new List<Album>();
-            using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=D:\\Git\\Gramophone.Web\\App_Data\\GramophoneDB.mdf;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=C:\\Users\\wasana\\Documents\\GitHub\\Gramophone\\Gramophone.Web\\App_Data\\GramophoneDB.mdf;Integrated Security=True"))
             {
                 connection.Open();
                 using (SqlCommand cmd = new SqlCommand())
