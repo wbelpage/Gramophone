@@ -89,6 +89,7 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Song\AddSong.cshtml" />
+    <Content Include="Areas\Admin\Views\Artist\AddArtist.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -104,6 +105,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArtistController.cs" />
     <Compile Include="Areas\Admin\Controllers\SongController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -111,6 +113,7 @@
     </Compile>
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\ArtistDTO.cs" />
+    <Compile Include="Models\Services\ArtistService.cs" />
     <Compile Include="Models\Services\SongService.cs" />
     <Compile Include="Models\SongDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

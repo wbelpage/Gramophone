@@ -1,0 +1,76 @@
+﻿@model Gramophone.Web.Models.ArtistDTO
+
+@{
+    ViewBag.Title = "AddArtist";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<form action="/Artist/AddArtist" class="form-horizontal" role="form" enctype="multipart/form-data" method="post">
+    <div class="header">
+        <h2>Add Song</h2>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="Name" name="Name" placeholder="Name">
+        </div>
+    </div>
+    @*<div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Year</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="Year" name="Year" placeholder="Year">
+        </div>
+    </div>*@
+        <div class="form-group">
+        <label class="col-sm-2 control-label">IsSinger</label>
+        <div class="col-sm-3">
+            @Html.CheckBoxFor(m => m.IsSinger)
+                    @*<input type="checkbox" id="IsSinger" name="IsSinger">*@
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">IsComposer</label>
+        <div class="col-sm-3">
+                    <input type="checkbox" id="IsComposer" name="IsComposer">
+        </div>
+    </div>
+     <div class="form-group">
+        <label class="col-sm-2 control-label">IsMusician</label>
+        <div class="col-sm-3">
+                    <input type="checkbox" id="IsMusician" name="IsMusician">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Wiki Link</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="WikiLink" name="WikiLink" placeholder="WikiLink">
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="col-sm-2 control-label">Biography</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="Biography" name="Biography" placeholder="Biography">
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="col-sm-2 control-label">Photo</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="Photo" name="Photo" placeholder="Photo">
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="col-sm-2 control-label">WebSite</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="WebsiteURL" name="WebsiteURL" placeholder="WebsiteURL">
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="col-sm-2 control-label">Infomation URL</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="URL" name="URL" placeholder="URL">
+        </div>
+    </div>
+    <input type="hidden" name="Id" value="0" />
+<p><button type="submit" id="btnSubmit"  class="btn btn-default">Add Artist</button></p>
+</form>
+
