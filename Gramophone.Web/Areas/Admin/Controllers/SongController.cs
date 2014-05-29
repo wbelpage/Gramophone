@@ -8,7 +8,7 @@ using Gramophone.Web.Models.Services;
 
 namespace Gramophone.Web.Areas.Admin.Controllers
 {
-    public class AdminTaskController : Controller
+    public class SongController : Controller
     {
         //
         // GET: /Admin/AdminTask/
@@ -65,11 +65,11 @@ namespace Gramophone.Web.Areas.Admin.Controllers
                 SongService ss = new SongService();
                 //ss.AddSong(song);
                // return View("~/Views/Admin/Song/Add");
-                return RedirectToAction("AddSong", "AdminTask", new { area = "Admin" });
+                return RedirectToAction("AddSong", "Song", new { area = "Admin" });
             }
             catch
             {
-                return RedirectToAction("AddSong", "AdminTask", new { area = "Admin" });
+                return RedirectToAction("AddSong", "Song", new { area = "Admin" });
             }
         }
 
