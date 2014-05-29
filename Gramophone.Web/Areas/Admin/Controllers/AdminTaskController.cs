@@ -8,25 +8,25 @@ using Gramophone.Web.Models.Services;
 
 namespace Gramophone.Web.Areas.Admin.Controllers
 {
-    public class SongController : Controller
+    public class AdminTaskController : Controller
     {
         //
-        // GET: /Admin/Song/
+        // GET: /Admin/AdminTask/
         public ActionResult Index()
         {
             return View();
         }
 
         //
-        // GET: /Admin/Song/Details/5
+        // GET: /Admin/AdminTask/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
         //
-        // GET: /Admin/Song/Add
-        public ActionResult Add()
+        // GET: /Admin/AdminTask/AddSong
+        public ActionResult AddSong()
         {
             SongService ss = new SongService();
 
@@ -41,47 +41,47 @@ namespace Gramophone.Web.Areas.Admin.Controllers
             ViewBag.Singers = list;
 
             //Get Albums List
-            //List<Album> albums = ss.GetAlbums();
-            //List<SelectListItem> albumList = new List<SelectListItem>();
-            //foreach (var album in albums)
-            //{
-            //    SelectListItem albumItem = new SelectListItem { Text = album.Name, Value = album.AlbumID.ToString() };
-            //    albumList.Add(albumItem);
-            //}
-            //ViewBag.Albums = albumList;
+            List<Album> albums = ss.GetAlbums();
+            List<SelectListItem> albumList = new List<SelectListItem>();
+            foreach (var album in albums)
+            {
+                SelectListItem albumItem = new SelectListItem { Text = album.Name, Value = album.AlbumID.ToString() };
+                albumList.Add(albumItem);
+            }
+            ViewBag.Albums = albumList;
             return View();
         }
 
         //
-        // POST: /Admin/Song/Add
+        // POST: /Admin/AdminTask/AddSong
         [HttpPost]
-        public ActionResult Add(FormCollection frm)
+        public ActionResult AddSong(FormCollection frm)
         {
             try
             {
-                SongDTO songs=new SongDTO();
-                UpdateModel(songs);
+                SongDTO song=new SongDTO();
+                UpdateModel(song);
 
                 SongService ss = new SongService();
-                ss.AddSong(songs);
+                //ss.AddSong(song);
                // return View("~/Views/Admin/Song/Add");
-                return RedirectToAction("Index");
+                return RedirectToAction("AddSong", "AdminTask", new { area = "Admin" });
             }
             catch
             {
-               return View("~/Views/Admin/Song/Add");
+                return RedirectToAction("AddSong", "AdminTask", new { area = "Admin" });
             }
         }
 
         //
-        // GET: /Admin/Song/Edit/5
+        // GET: /Admin/AdminTask/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
         //
-        // POST: /Admin/Song/Edit/5
+        // POST: /Admin/AdminTask/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -98,14 +98,14 @@ namespace Gramophone.Web.Areas.Admin.Controllers
         }
 
         //
-        // GET: /Admin/Song/Delete/5
+        // GET: /Admin/AdminTask/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
         //
-        // POST: /Admin/Song/Delete/5
+        // POST: /Admin/AdminTask/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
