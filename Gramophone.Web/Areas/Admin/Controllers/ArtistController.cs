@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Gramophone.Web.Models;
+using Gramophone.Web.Models.Services;
 
 namespace Gramophone.Web.Areas.Admin.Controllers
 {
@@ -26,9 +27,12 @@ namespace Gramophone.Web.Areas.Admin.Controllers
         {
             ArtistDTO artist = new ArtistDTO();
             UpdateModel(artist);
+            ArtistService artistService = new ArtistService();
 
+            //Get Artists list
+            artistService.AddArtist(artist);
 
-            return View();
+            return RedirectToAction("AddArtist", "Artist", new { area = "Admin" });
         }
 	}
 }
