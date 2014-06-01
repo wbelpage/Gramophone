@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace Gramophone.Web.Models.Services
 {
@@ -40,7 +41,8 @@ namespace Gramophone.Web.Models.Services
         public List<ArtistDTO> GetArtists()
         {
             List<ArtistDTO> artists = new List<ArtistDTO>();
-            using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\v11.0;AttachDbFilename=D:\\Git\\Gramophone.Web\\App_Data\\GramophoneDB.mdf;Integrated Security=True"))
+            string connectionString = ConfigurationManager.ConnectionStrings["GramophoneDB"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))            
             {
                 connection.Open();
                 using (SqlCommand cmd = new SqlCommand())

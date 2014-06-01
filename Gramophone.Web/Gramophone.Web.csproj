@@ -90,6 +90,7 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Song\AddSong.cshtml" />
     <Content Include="Areas\Admin\Views\Artist\AddArtist.cshtml" />
+    <Content Include="Areas\Admin\Views\Artist\Artists.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -116,6 +117,7 @@
     <Compile Include="Models\Services\ArtistService.cs" />
     <Compile Include="Models\Services\SongService.cs" />
     <Compile Include="Models\SongDTO.cs" />
+    <Compile Include="Models\Utility\EntityHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

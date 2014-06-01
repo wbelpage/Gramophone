@@ -12,16 +12,12 @@
     <div class="form-group">
         <label for="Name" class="col-sm-2 control-label">Name</label>
         <div class="col-sm-3">
-            <input type="text" class="form-control" id="Name" name="Name" placeholder="Name" minlength="3" required>
+            @Html.TextBoxFor(m => m.Name)
+
+            @*<input type="text" class="form-control" id="Name" name="Name" placeholder="Name" minlength="3" required>*@
         </div>
     </div>
-    @*<div class="form-group">
-        <label for="inputPassword" class="col-sm-2 control-label">Birth Year</label>
-        <div class="col-sm-3">
-            <input type="text" class="form-control" id="Year" name="Year" placeholder="Year">
-        </div>
-    </div>*@
-        <div class="form-group">
+    <div class="form-group">
         <label class="col-sm-2 control-label">IsSinger</label>
         <div class="col-sm-3">
             @Html.CheckBoxFor(m => m.IsSinger)
@@ -30,13 +26,13 @@
     <div class="form-group">
         <label class="col-sm-2 control-label">IsComposer</label>
         <div class="col-sm-3">
-           @Html.CheckBoxFor(m => m.IsComposer)
+            @Html.CheckBoxFor(m => m.IsComposer)
         </div>
     </div>
-     <div class="form-group">
+    <div class="form-group">
         <label class="col-sm-2 control-label">IsMusician</label>
         <div class="col-sm-3">
-           @Html.CheckBoxFor(m => m.IsMusician)
+            @Html.CheckBoxFor(m => m.IsMusician)
         </div>
     </div>
     <div class="form-group">
@@ -45,34 +41,36 @@
             <input type="text" class="form-control" id="WikiLink" name="WikiLink" placeholder="WikiLink">
         </div>
     </div>
-        <div class="form-group">
+    <div class="form-group">
         <label class="col-sm-2 control-label">Biography</label>
         <div class="col-sm-3">
             <input type="text" class="form-control" id="Biography" name="Biography" placeholder="Biography">
         </div>
     </div>
-        <div class="form-group">
+    <div class="form-group">
         <label class="col-sm-2 control-label">Photo</label>
         <div class="col-sm-3">
             <input type="text" class="form-control" id="Photo" name="Photo" placeholder="Photo">
         </div>
     </div>
-        <div class="form-group">
+    <div class="form-group">
         <label class="col-sm-2 control-label">WebSite</label>
         <div class="col-sm-3">
             <input type="text" class="form-control" id="WebsiteURL" name="WebsiteURL" placeholder="WebsiteURL">
         </div>
     </div>
-        <div class="form-group">
+    <div class="form-group">
         <label class="col-sm-2 control-label">Infomation URL</label>
         <div class="col-sm-3">
             <input type="text" class="form-control" id="URL" name="URL" placeholder="URL">
         </div>
     </div>
-    <input type="hidden" name="Id" value="0" />
-<p><button type="submit" id="btnSubmit"  class="btn btn-default">Add Artist</button></p>
+            @Html.HiddenFor(m => m.ArtistID)
+
+    <p>
+        <button type="submit" id="btnSubmit" class="btn btn-default">Add Artist</button></p>
 </form>
 <script>
-$("#AddArtistForm").validate();
+    $("#AddArtistForm").validate();
 </script>
 

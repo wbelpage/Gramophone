@@ -17,8 +17,14 @@ namespace Gramophone.Web.Areas.Admin.Controllers
             return View();
         }
 
-        public ActionResult AddArtist() 
+        public ActionResult AddArtist(int? id) 
         {
+            if (id.HasValue)
+            {
+            ArtistService artistService = new ArtistService();
+            ArtistDTO artist = artistService.GetById(id.Value);
+            return View(artist);
+            }
             return View(); 
         }
 
@@ -32,7 +38,15 @@ namespace Gramophone.Web.Areas.Admin.Controllers
             //Get Artists list
             artistService.AddArtist(artist);
 
-            return RedirectToAction("AddArtist", "Artist", new { area = "Admin" });
+            return RedirectToAction("Artists", "Artist", new { area = "Admin" });
+        }
+
+        public ActionResult Artists()
+        {
+            ArtistService artistService = new ArtistService();
+            IList<ArtistDTO> artistList = artistService.GetAll();
+
+            return View(artistList);
         }
 	}
 }

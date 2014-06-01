@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Gramophone.Web.Models.ArtistDTO>
+
+@{
+    ViewBag.Title = "Artists";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Artists</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddArtist")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ArtistID)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsSinger)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsComposer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsMusician)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WikiLink)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Biography)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.WebsiteURL)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.URL)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ArtistID)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSinger)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsComposer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsMusician)
+        </td>
+        <td>
+            <a href="@item.WikiLink" target="_blank">Wikipedia Bio</a>
+            @*@Html.ActionLink("Wikipedia Bio", item.WikiLink)*@
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Biography)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Photo)
+        </td>*@
+        <td>
+            <a href="@item.WebsiteURL" target="_blank">Official Web Site</a>
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.URL)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "AddArtist", new {  id=item.ArtistID }) @*|
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ })|
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+        </td>
+    </tr>
+}
+
+</table>
